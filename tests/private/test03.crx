@@ -1,0 +1,5 @@
+// test while
+
+func main() : void {
+	while 5 {}
+}

@@ -1,0 +1,3 @@
+Error parsing file.
+SyntaxError(4,2)[Expected CLOSE_BRACE but got ARRAY.]
+SyntaxError(4,2)[Could not complete parsing.]

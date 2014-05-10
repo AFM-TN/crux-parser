@@ -1,0 +1,5 @@
+// test variable declaration
+
+func main() : void {
+  let a = 5 == 6;
+}

@@ -1,0 +1,5 @@
+// test syntax error
+
+func main() : void {
+  ::foo(let zoidberg = crabby);
+}

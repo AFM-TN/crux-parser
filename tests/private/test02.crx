@@ -1,0 +1,5 @@
+// test expressions
+
+func main() : void {
+  ::fry(not ::leela() * (bender) + amy[0] * ::zoidberg(rich) == farnsworth[old] * zuzu + 4 * 3.4, true * (::kif()) + zapp[4][5] * scruffy == 5 * 4 + 3 * 2, futurama);
+} 

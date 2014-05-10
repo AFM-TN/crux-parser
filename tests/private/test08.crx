@@ -1,0 +1,3 @@
+// syntax error
+
+let t[5] = x;

@@ -1,71 +1,129 @@
 Crux Parser
-===========
+====
 
-This parsers creates a parse tree based on the following grammar:
+###Introduction
 
-literal := INTEGER | FLOAT | TRUE | FALSE .
+A compiler is comprised of seven stages:
+-	Lexical analysis: Identify the logical pieces of the input.
+-	Syntax analysis: Identify how those pieces relate to each other.
+-	Semantic analysis: Identify the meaning of the overall structure.
+-	IR Generation: Design one possible structure.
+-	IR Optimization: Simplify the intended structure.
+-	Generation: Fabricate the structure.
+-	Optimization: Improve the resulting structure.
 
-designator := IDENTIFIER { "[" expression0 "]" } .
+###Project
 
-type := IDENTIFIER .
+This project implements the syntax analysis stage, or parser, of the compiler for the language Crux. The parser is a LL(0) parser( left-to-right scanning, leftmost derivation, 0 lookaheads) that utilizes a First Set to identify which production rule it will use. The parser uses the previously implemented scanner to generate the tokens needed to parse the source input. If the source input cannot be parsed successfully, an error message will be returned to notify the user.
 
-op0 := ">=" | "<=" | "!=" | "==" | ">" | "<" .
+###Classes
 
-op1 := "+" | "-" | "or" .
+Compiler: Takes a source input file and tries to parse the source input. If it parses succesfully, a parse tree will be generated. If not, an error message will be generated instead.
 
-op2 := "*" | "/" | "and" .
+Scanner: Uses a greedy approach to generate the tokens from a source input.
 
-expression0 := expression1 [ op0 expression1 ] .
+Parser: Uses the scanner to generate the tokens from the source input and creates a parse tree from them.
 
-expression1 := expression2 { op1  expression2 } .
+Token: Represents the logical pieces of Crux.
 
-expression2 := expression3 { op2 expression3 } .
+NonTerminal: Contains the First Set of each production rule.
 
-expression3 := "not" expression3
-       | "(" expression0 ")"
-       | designator
-       | call-expression
-       | literal .
+####Sample
 
-call-expression := "::" IDENTIFIER "(" expression-list ")" .
+#####Input
 
-expression-list := [ expression0 { "," expression0 } ] .
+func main() : void {
 
-parameter := IDENTIFIER ":" type .
+  let a = 4;
+  
+  let b = 5.2;
+  
+  let c = true;
+  
+  let d = false;
+  
+}
 
-parameter-list := [ parameter { "," parameter } ] .
 
-variable-declaration := "var" IDENTIFIER ":" type ";"
+#####Output
 
-array-declaration := "array" IDENTIFIER ":" type "[" INTEGER "]" { "[" INTEGER "]" } ";"
+PROGRAM
 
-function-definition := "func" IDENTIFIER "(" parameter-list ")" ":" type statement-block .
-
-declaration := variable-declaration | array-declaration | function-definition .
-
-declaration-list := { declaration } .
-
-assignment-statement := "let" designator "=" expression0 ";"
-
-call-statement := call-expression ";"
-
-if-statement := "if" expression0 statement-block [ "else" statement-block ] .
-
-while-statement := "while" expression0 statement-block .
-
-return-statement := "return" expression0 ";" .
-
-statement := variable-declaration
-           | call-statement
-           | assignment-statement
-           | if-statement
-           | while-statement
-           | return-statement .
-
-statement-list := { statement } .
-
-statement-block := "{" statement-list "}" .
-
-program := declaration-list EOF .
-
-**Language derived from Eric Hennigan’s CS 142, Fall 2013.
+  DECLARATION_LIST
+  
+    DECLARATION
+    
+      FUNCTION_DEFINITION
+      
+        PARAMETER_LIST
+        
+        TYPE
+        
+        STATEMENT_BLOCK
+        
+          STATEMENT_LIST
+          
+            STATEMENT
+            
+              ASSIGNMENT_STATEMENT
+              
+                DESIGNATOR
+                
+                EXPRESSION0
+                
+                  EXPRESSION1
+                  
+                    EXPRESSION2
+                    
+                      EXPRESSION3
+                      
+                        LITERAL
+                        
+            STATEMENT
+            
+              ASSIGNMENT_STATEMENT
+              
+                DESIGNATOR
+                
+                EXPRESSION0
+                
+                  EXPRESSION1
+                  
+                    EXPRESSION2
+                    
+                      EXPRESSION3
+                      
+                        LITERAL
+                        
+            STATEMENT
+            
+              ASSIGNMENT_STATEMENT
+              
+                DESIGNATOR
+                
+                EXPRESSION0
+                
+                  EXPRESSION1
+                  
+                    EXPRESSION2
+                    
+                      EXPRESSION3
+                      
+                        LITERAL
+                        
+            STATEMENT
+            
+              ASSIGNMENT_STATEMENT
+              
+                DESIGNATOR
+                
+                EXPRESSION0
+                
+                  EXPRESSION1
+                  
+                    EXPRESSION2
+                    
+                      EXPRESSION3
+                      
+                        LITERAL
+                        

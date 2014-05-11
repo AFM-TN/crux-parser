@@ -32,98 +32,55 @@ NonTerminal: Contains the First Set of each production rule.
 
 #####Input
 
+```
 func main() : void {
-
-  let a = 4;
-  
-  let b = 5.2;
-  
-  let c = true;
-  
-  let d = false;
-  
+    let a = 4;
+    let b = 5.2;
+    let c = true;
+    let d = false;
 }
-
+```
 
 #####Output
-
+```
 PROGRAM
-
   DECLARATION_LIST
-  
     DECLARATION
-    
       FUNCTION_DEFINITION
-      
         PARAMETER_LIST
-        
         TYPE
-        
         STATEMENT_BLOCK
-        
           STATEMENT_LIST
-          
             STATEMENT
-            
               ASSIGNMENT_STATEMENT
-              
                 DESIGNATOR
-                
                 EXPRESSION0
-                
                   EXPRESSION1
-                  
                     EXPRESSION2
-                    
                       EXPRESSION3
-                      
                         LITERAL
-                        
             STATEMENT
-            
               ASSIGNMENT_STATEMENT
-              
                 DESIGNATOR
-                
                 EXPRESSION0
-                
                   EXPRESSION1
-                  
                     EXPRESSION2
-                    
                       EXPRESSION3
-                      
                         LITERAL
-                        
             STATEMENT
-            
               ASSIGNMENT_STATEMENT
-              
                 DESIGNATOR
-                
                 EXPRESSION0
-                
                   EXPRESSION1
-                  
                     EXPRESSION2
-                    
                       EXPRESSION3
-                      
                         LITERAL
-                        
             STATEMENT
-            
               ASSIGNMENT_STATEMENT
-              
                 DESIGNATOR
-                
                 EXPRESSION0
-                
                   EXPRESSION1
-                  
                     EXPRESSION2
-                    
                       EXPRESSION3
-                      
                         LITERAL
-                        
+```

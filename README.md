@@ -84,3 +84,6 @@ PROGRAM
                       EXPRESSION3
                         LITERAL
 ```
+
+Previous: https://github.com/AFM-TN/crux-scanner
+Next: https://github.com/AFM-TN/crux-symbol-table
